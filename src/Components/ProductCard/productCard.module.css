@@ -1,0 +1,24 @@
+.cardContainer {
+  /* width: 100%; */
+  margin-bottom: 5px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.productName {
+  font-size: clamp(20px, 2vw, 30px);
+}
+.cardBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.like {
+  height: clamp(20px, 2vw, 30px);
+  width: clamp(20px, 2vw, 30px);
+  cursor: pointer;
+}
+.unLike {
+  height: clamp(20px, 2vw, 30px);
+  width: clamp(20px, 2vw, 30px);
+  transform: rotate(180deg);
+  cursor: pointer;
+}

@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  /* background-color: rgba(240, 240, 240, 1); */
+  background-color: rgb(62, 79, 164);
+}
+.header {
+  display: flex;
+  background-color: rgb(7, 8, 58);
+  color: rgba(255, 255, 255, 0.69);
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: clamp(20px, 2%, 60px);
+  padding-bottom: clamp(10px, 1%, 50px);
+  justify-content: space-between;
+  font-size: clamp(15px, 2vw, 25px);
+}
+.logout {
+  height: clamp(30px, 2%, 45px);
+  width: clamp(30px, 2%, 45px);
+  resize: both;
+  background-color: white;
+  border-radius: 5px;
+  padding: 2px;
+}
