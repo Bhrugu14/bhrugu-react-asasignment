@@ -12,10 +12,11 @@
   color: rgba(255, 255, 255, 0.69);
   padding-left: 4%;
   padding-right: 4%;
-  padding-top: clamp(20px, 2%, 60px);
-  padding-bottom: clamp(10px, 1%, 50px);
   justify-content: space-between;
   font-size: clamp(15px, 2vw, 25px);
+}
+.headerNav {
+  font-size: clamp(15px, 1.3vw, 25px);
 }
 .logout {
   height: clamp(30px, 2%, 45px);

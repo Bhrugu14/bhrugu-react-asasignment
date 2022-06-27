@@ -1,32 +1,29 @@
 import { combineReducers } from "redux";
-
+import { productsData, users } from "../../Data";
 const initialData = {
-  productsListData: [],
-  users: [],
+  productsListData: productsData,
+  users: users,
   currentUser: "no data found",
 };
 const allReducers = (state = initialData, action) => {
   switch (action.type) {
     case "ADD_PRODUCT": {
-      const { data } = action.payload;
       return {
         ...state,
-        productsListData: data,
+        productsListData: action.payload,
       };
     }
     case "ADD_USER": {
-      const { data } = action.payload;
       return {
         ...state,
-        users: data,
+        users: [...state.users, ...action.payload],
       };
     }
     case "CURRENT_USER": {
-      const { data } = action.payload;
-      console.log("reducerData", action);
+      console.log("CURRENT_USER", action);
       return {
         ...state,
-        currentUser: data,
+        currentUser: action.payload,
       };
     }
     default:

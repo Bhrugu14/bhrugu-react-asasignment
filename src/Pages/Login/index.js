@@ -18,15 +18,21 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async () => {
+    console.log("ALL", AllUsers);
     if (validateEmail(email)) {
-      const userHere = {
-        email: email,
-        password: password,
-      };
-      await dispatch(CurrentUser(userHere));
-
-      navigate("/productList");
+      let isExist = AllUsers.find(
+        (i) => i.email === email && i.password === password
+      );
+      if (isExist) {
+        SetToast("Login Successful");
+        await dispatch(CurrentUser(isExist));
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+      } else {
+        SetToast("Email or password is incorrect");
+      }
     } else {
       SetToast("Enter Valid Email");
     }
@@ -37,7 +43,9 @@ const Login = () => {
       <h1 className={styles.welcomeText}>Have an Account?</h1>
       <label className={styles.welcomeText}>
         {"or "}
-        <a className={styles.register}>Register</a>
+        <a href="/register" className={styles.register}>
+          Register
+        </a>
         {"  to create new account"}
       </label>
       <Card className={styles.card}>

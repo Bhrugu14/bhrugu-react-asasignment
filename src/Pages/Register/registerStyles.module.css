@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgba(240, 240, 240, 1); */
+  background-color: rgb(62, 79, 164);
+}
+.card {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  width: clamp(300px, 60%, 900px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.inputStyle {
+  /* height: min(150px, 10vh); */
+  /* max-width: 200px; */
+  width: 80%;
+  min-width: 40px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  align-self: center;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: fit-content;
+  flex-direction: column;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: rgb(57, 33, 175);
+}
+.welcomeText {
+  font-weight: normal;
+  color: rgb(255, 255, 255);
+}
+.register {
+  font-weight: normal;
+  color: rgb(206, 228, 255);
+  cursor: pointer;
+}
+.buttonContainer {
+  display: flex;
+  height: clamp(20px, 15%, 80px);
+  justify-content: flex-end;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}

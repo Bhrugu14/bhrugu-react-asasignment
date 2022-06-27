@@ -6,16 +6,69 @@
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 10px;
+  min-height: 90vh;
+  flex: 1;
+  overflow: hidden;
+  /* background-color: red; */
 }
 .searchInput {
   background-color: rgba(255, 255, 255, 0.512) !important;
-  width: 100%;
+  width: 90%;
   padding: 1%;
   border-bottom: 1px solid white;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   color: white;
   border-radius: 10px;
 }
 .searchInput:focus {
   background-color: transparent !important;
+}
+.addNew {
+  cursor: pointer;
+  width: clamp(100px, 9%, 200px);
+  text-align: center;
+  margin-left: 1%;
+  background-color: rgb(1, 0, 75);
+  color: white;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 10px;
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  cursor: pointer;
+}
+.pageNumber {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  /* background-color: antiquewhite; */
+  margin: 2px;
+}
+.filterDiv {
+  height: 4vh;
+  color: white;
+}
+.sortButton {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 5px;
+  background-color: rgb(6, 3, 99);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.csvLink {
+  color: white;
+  background-color: rgb(8, 0, 100);
+  padding: 5px;
+  border-radius: 5px;
 }
