@@ -5,3 +5,9 @@ export const validateEmail = (email) => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 };
+export const validateName = (name) => {
+  return name.length >= 3;
+};
+export const validatePassword = (name) => {
+  return name.length >= 5;
+};

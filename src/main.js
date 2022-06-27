@@ -3,22 +3,21 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import Dashboard from "./Pages/Dashboard";
 import ProductList from "./Pages/ProductList";
 import Error from "./Pages/404";
 
 import { StoreValue, GetValue, RemoveValue, RequiredAuth } from "./utils";
 import { useSelector } from "react-redux";
-import { CustomModal } from "./Components";
 
 export const AuthContext = createContext();
 
 const Main = () => {
   const currentUser = useSelector((state) => state.allReducers.currentUser);
-  const allReducers = useSelector((state) => state.allReducers);
-  console.log("allReducers", allReducers);
+
   const navigate = useNavigate();
   const [user, setUser] = useState(currentUser);
-  const [modalShow, setModalShow] = useState(false);
 
   const SetToast = (msg) => {
     toast(msg);
@@ -43,7 +42,6 @@ const Main = () => {
   const value = useMemo(
     () => ({
       SetToast,
-      setModalShow,
     }),
     [user]
   );
@@ -53,10 +51,28 @@ const Main = () => {
       <Routes>
         <Route
           exact
-          path="/"
+          path="/login"
           element={
             <RequiredAuth user={currentUser} path={"auth"}>
               <Login />
+            </RequiredAuth>
+          }
+        />
+        <Route
+          exact
+          path="/register"
+          element={
+            <RequiredAuth user={currentUser} path={"auth"}>
+              <Register />
+            </RequiredAuth>
+          }
+        />
+        <Route
+          exact
+          path="/"
+          element={
+            <RequiredAuth user={currentUser} path={"app"}>
+              <Dashboard />
             </RequiredAuth>
           }
         />
@@ -89,7 +105,6 @@ const Main = () => {
         draggable
         pauseOnHover
       />
-      <CustomModal show={modalShow} onHide={() => setModalShow(false)} />
     </AuthContext.Provider>
   );
 };
